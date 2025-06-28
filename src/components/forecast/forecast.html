@@ -1,0 +1,19 @@
+<app-search (searchEvent)="onSearch($event)"></app-search>
+<div *ngIf="isLoading" class="loading">Loading...</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<div *ngIf="weatherData" class="forecast">
+  <h2>5-Day Forecast for {{ weatherData.location.name }}, {{ weatherData.location.country }}</h2>
+  
+  <div class="forecast-days">
+    <div *ngFor="let day of weatherData.forecast.forecastday" class="forecast-day">
+      <div class="date">{{ day.date | date:'EEE, MMM d' }}</div>
+      <img [src]="day.day.condition.icon" [alt]="day.day.condition.text">
+      <div class="temps">
+        <span class="max-temp">{{ day.day.maxtemp_c }}°</span>
+        <span class="min-temp">{{ day.day.mintemp_c }}°</span>
+      </div>
+      <div class="condition">{{ day.day.condition.text }}</div>
+    </div>
+  </div>
+</div>

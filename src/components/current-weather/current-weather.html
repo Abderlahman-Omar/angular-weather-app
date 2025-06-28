@@ -1,0 +1,22 @@
+<app-search (searchEvent)="onSearch($event)"></app-search>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<div *ngIf="weatherData" class="current-weather">
+  <h2>Current Weather in {{ weatherData.location.name }}, {{ weatherData.location.country }}</h2>
+  
+  <div class="weather-info">
+    <div class="main-info">
+      <img [src]="weatherData.current.condition.icon" [alt]="weatherData.current.condition.text">
+      <div class="temperature">{{ weatherData.current.temp_c }}°C</div>
+    </div>
+    
+    <div class="details">
+      <div class="condition">{{ weatherData.current.condition.text }}</div>
+      <div>Wind: {{ weatherData.current.wind_kph }} km/h</div>
+      <div>Humidity: {{ weatherData.current.humidity }}%</div>
+    </div>
+  </div>
+
+  <a routerLink="/forecast" [queryParams]="{city: weatherData.location.name}">View 5-Day Forecast</a>
+</div>

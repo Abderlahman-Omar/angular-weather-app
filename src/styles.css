@@ -1,1 +1,131 @@
 /* You can add global styles to this file, and also import other style files */
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: #1976d2;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  
+    h1 {
+      margin: 0;
+    }
+  
+    nav {
+      margin-top: 1rem;
+  
+      a {
+        color: white;
+        text-decoration: none;
+        margin: 0 1rem;
+        padding: 0.5rem;
+  
+        &.active {
+          border-bottom: 2px solid white;
+        }
+      }
+    }
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Search component */
+  .search-container {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+  
+    input {
+      padding: 0.5rem;
+      flex-grow: 1;
+      max-width: 300px;
+    }
+  
+    button {
+      padding: 0.5rem 1rem;
+      background: #1976d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  
+  /* Current weather */
+  .current-weather {
+    margin-top: 2rem;
+    text-align: center;
+  
+    .weather-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin: 2rem 0;
+  
+      .main-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+  
+        .temperature {
+          font-size: 3rem;
+          font-weight: bold;
+        }
+      }
+    }
+  
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #1976d2;
+      text-decoration: none;
+    }
+  }
+  
+  /* Forecast */
+  .forecast-days {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  
+    .forecast-day {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      text-align: center;
+  
+      .date {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+  
+      .temps {
+        margin: 0.5rem 0;
+  
+        .max-temp {
+          font-weight: bold;
+          margin-right: 0.5rem;
+        }
+  
+        .min-temp {
+          color: #666;
+        }
+      }
+    }
+  }
+  
+  .error {
+    color: red;
+    margin: 1rem 0;
+  }
